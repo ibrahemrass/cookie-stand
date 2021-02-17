@@ -5,12 +5,10 @@
 let hours=['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm',"Daily Location Total"];
 let CulmTot=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 function randomValue(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min); 
-  
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
-  
+let countar=1;
 
-    
 let div= document.getElementById('cookies');
 let table=document.createElement('table')
 div.appendChild(table)
@@ -30,6 +28,7 @@ function Store(location,mincus,maxcus,avg_cookies){
 }
 }
 Store.prototype.render = function () {
+  countar++;
   let myshop=document.createElement('div');
      let h1=document.createElement('h1');
      let div= document.getElementById('cookies');
@@ -38,21 +37,13 @@ Store.prototype.render = function () {
   
      }
      Store.prototype.cookiesBranch = function(){
-  
   for(let i=0; i<hours.length-1; i++)
   CulmTot[i]=this.numberOFcustumer[i]+CulmTot[i];
-
-
-  
-
-
-
   let tr =document.createElement('tr')
-table.appendChild(tr)
-let th1=document.createElement('th')
-th1.textContent=this.location;
-tr.appendChild(th1)
-
+  table.appendChild(tr)
+  let th1=document.createElement('th')
+  th1.textContent=this.location;
+  tr.appendChild(th1)
 for(let i=0;i<hours.length-1;i++){
   let thEl=document.createElement('th')
   thEl.textContent=this.numberOFcustumer[i]
@@ -61,12 +52,9 @@ for(let i=0;i<hours.length-1;i++){
 let thA=document.createElement('th')
 thA.textContent=this.total;
 tr.appendChild(thA)
+
 }
  
-
-
-
-
 let seatl= new Store('seatl','23','65','6.3')
 let Tokyo =new Store('Tokyo','3','24','1.2')
 let Dubai= new Store('Dubai','11','38','3.7')
@@ -103,16 +91,9 @@ for(let i=0;i<hours.length;i++){
   tr.appendChild(thEl)}
 }
 Store.prototype.cookiesBranch = function(){
-  
   for(let i=0; i<hours.length-1; i++)
   CulmTot[i]=this.numberOFcustumer[i]+CulmTot[i];
-
-
-  
-
-
-
-  let tr =document.createElement('tr')
+let tr =document.createElement('tr')
 table.appendChild(tr)
 let th1=document.createElement('th')
 th1.textContent=this.location;
@@ -126,6 +107,8 @@ for(let i=0;i<hours.length-1;i++){
 let thA=document.createElement('th')
 thA.textContent=this.total;
 tr.appendChild(thA)
+
+
 }
 
   timeheader();
@@ -134,22 +117,49 @@ tr.appendChild(thA)
   Dubai.cookiesBranch();
   Paris.cookiesBranch();
   lima.cookiesBranch();
-  
-  
+
+  function foooterrow(){
+    let megaTotal=0
   let tr =document.createElement('tr')
   table.appendChild(tr)
   let thS=document.createElement('th');
-  
   thS.textContent="Totatls";
   tr.appendChild(thS);
   for(let i=0; i<hours.length-1; i++){
-    
     let thS=document.createElement('th');
     thS.textContent=CulmTot[i];
     tr.appendChild(thS);
+    megaTotal+=CulmTot[i]
+
   }
-
-
+  let allTotal=document.createElement('tdata')
+  tr.appendChild(allTotal);
+  allTotal.textContent=megaTotal
+}
+ foooterrow()
+console.log(countar)
+  const form = document.getElementById('cusomerData');
+  form.addEventListener('submit', addSomeData);
+ function addSomeData (event){
+   let countarraw = table.rows.length-1;
+   event.preventDefault()
+   let location=event.target.loc.value;
+   console.log(location)
+   let mincus=event.target.number.value;
+   console.log(mincus)
+   let maxcus=event.target.number1.value;
+   console.log(maxcus)
+   let avg_cookies=event.target.number2.value;
+   console.log(avg_cookies)
+   let newData= new Store(location,mincus,maxcus,avg_cookies);
+   console.log(newData)
+   table.deleteRow(countarraw)
+newData.upDateCus();
+newData.cookiesBranch();
+newData.render();
+foooterrow();
+  
+}
 // function cokkisInBranch(){
 //   for (var i=0;i<numberOFcustumer.length;i++){
 //     var trEl= document.createElement('tr');
