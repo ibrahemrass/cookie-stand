@@ -138,6 +138,8 @@ tr.appendChild(thA)
 }
  foooterrow()
 console.log(countar)
+
+//forms
   const form = document.getElementById('cusomerData');
   form.addEventListener('submit', addSomeData);
  function addSomeData (event){

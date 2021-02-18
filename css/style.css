@@ -1,6 +1,82 @@
- table{
-    border: 1px solid red;
+
+
+
+body {
+    background-color: azure;
+  color: #000000;
+  margin: 0px;
+}
+p{
+    font-size: xx-large;
+    text-align: center;
+    text-decoration-color: burlywood;
+    font-family: "Sofia", sans-serif;
+   
+}
+header {
+ font-family: ;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #181342;
+}
+nav {
+  margin: 20px auto;
+  border-bottom:5px solid #000000;
+  padding-bottom: 30px;
+
+}
+
+
+header {
+  text-align: center;
+  text-anchor: middle;
+  font-style: italic;
+}
+body fieldset{
+  max-width: 600px;
+  margin: 30px auto 10px auto;
+  background-color: bisque;
+}
+table {
+  border-collapse: collapse;
+  margin-top: 100px;
+  margin: 100px auto; 
+  background-color: bisque;
 }
 th,td{
     border:1px solid royalblue;
+}
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  color:#0f0000;
+  background-color: bisque;
+}
+h1 {
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 40px;
+}
+
+
+td {
+  padding: 1em .8em;
+  text-align: center;
+  color: #030000;
+  background-color: bisque;
+}
+footer {
+  text-align: center;
+}
+
+p {
+  margin: 0px 100px 20px 100px;
+}
+
+
+.sales{
+    color: #000003;
+    text-align: center;
+    text-decoration: none;
 }
