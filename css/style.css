@@ -14,9 +14,9 @@ p{
    
 }
 header {
- font-family: ;
-  padding-top: 60px;
-  padding-bottom: 60px;
+ font-family: 
+  padding-top 60px;
+ 
   color: #181342;
 }
 nav {
@@ -79,4 +79,29 @@ p {
     color: #000003;
     text-align: center;
     text-decoration: none;
+}
+#family {
+    float: right;
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 22px;
+    margin-right: 10px;
+    width: 200px;
+    margin-top: -270px;
+
+}
+#familyPic {
+    object-fit: contain;
+    width: 200px;
+    margin-right: 10px;
+    float: right;
+    margin-top: -160px;
+}
+
+#free {
+    color: rgb(0, 0, 0);
+    position: relative;
+    width: 500px;
+    font-size: 35px;
+    background-color: rgb(234, 200, 193, .8);
+   
 }
